@@ -51,7 +51,7 @@ const NavBar = () => {
           <a className="font-bold text-xl">CS — Ticket System</a>
         </div>
         <div className="navbar-end">
-          <ul className="menu menu-horizontal px-1">
+          <ul className="menu hidden lg:flex menu-horizontal px-1">
             <li>
               <a>Home</a>
             </li>
