@@ -1,16 +1,52 @@
-# React + Vite
+# React Basics
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+---
 
-Currently, two official plugins are available:
+## What is JSX and why is it used?
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+JSX stands for **JavaScript XML**. It allows us to write HTML-like code inside JavaScript. React uses JSX to describe what the UI should look like.
 
-## React Compiler
+Instead of creating elements manually with JavaScript, JSX makes the code easier to read and write. React then converts JSX into normal JavaScript behind the scenes.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Difference between State and Props
 
-## Expanding the ESLint configuration
+Both **state** and **props** are used to manage data in React, but they have different purposes.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+### Props
+
+- Props are used to pass data from a **parent component to a child component**.
+- They are **read-only** and cannot be changed by the child.
+
+### State
+
+- State is used to store data inside a component.
+- It **can change over time**, and when it changes, React **re-renders the component**.
+
+---
+
+## What is the useState hook and how does it work?
+
+`useState` is a React hook that allows functional components to store and update state.
+
+It returns two things:
+
+1. The current state value
+2. A function to update the state
+
+---
+
+## How can you share state between components in React?
+
+The most common way is **lifting state up**.
+
+This means moving the state to the **closest common parent component** and then passing the data or functions down to child components using props.
+
+---
+
+## How is event handling done in React?
+
+React handles events using **camelCase syntax** and functions.
+
+Instead of HTML events like `onclick`, React uses `onClick`.
+
+---
