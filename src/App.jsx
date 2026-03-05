@@ -12,11 +12,15 @@ function App() {
   const [tasks, setTasks] = useState([]);
   const [resolveTasks, setResolveTask] = useState([]);
   const handleTasks = (task) => {
+    if (tasks.find((t) => t.id === task.id)) return;
     const newTasks = [...tasks, task];
     setTasks(newTasks);
   };
 
   const handleResolveTask = (resolvedTask) => {
+    const remainingTasks = tasks.filter((t) => t.id !== resolvedTask.id);
+    setTasks(remainingTasks);
+
     const newResolvedTask = [...resolveTasks, resolvedTask];
     setResolveTask(newResolvedTask);
   };
