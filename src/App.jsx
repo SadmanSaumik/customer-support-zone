@@ -6,6 +6,7 @@ import Banner from "./components/Banner/Banner";
 import TaskStatus from "./components/TaskStatus/TaskStatus";
 import ResolvedTask from "./components/ResolvedTask/ResolvedTask";
 import Footer from "./components/Footer/Footer";
+import { ToastContainer, toast } from "react-toastify";
 
 const ticketsPromise = fetch("/ticketData.json").then((res) => res.json());
 function App() {
@@ -15,6 +16,7 @@ function App() {
     if (tasks.find((t) => t.id === task.id)) return;
     const newTasks = [...tasks, task];
     setTasks(newTasks);
+    toast("Task added to Task Status");
   };
 
   const handleResolveTask = (resolvedTask) => {
@@ -68,6 +70,7 @@ function App() {
         </div>
       </div>
       <Footer></Footer>
+      <ToastContainer></ToastContainer>
     </>
   );
 }
